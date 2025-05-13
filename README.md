@@ -1,8 +1,8 @@
-# 🚀 TimeTracker
+# 🚀 Project time tracker
 
 A tool to track working time on projects with role management and create project reports.
 
-It is based on Kaido-Kit with Laravel & Filament and was an application test. 
+It is based on Kaido-Kit with Laravel & Filament and was an application test.
 
 ## ✨ Features
 
@@ -26,13 +26,12 @@ It is based on Kaido-Kit with Laravel & Filament and was an application test.
 
 ## 🚀 Quick Start
 
-
 1. Install packages
 
     ```php
     composer install
     ```
-   
+
 2. Sail build & start
 
     ```php
@@ -55,7 +54,7 @@ It is based on Kaido-Kit with Laravel & Filament and was an application test.
     ```php
     npm install & npm run build 
     ```
-   
+
 6. Run setup. Includes creating users, roles and example data
 
     ```php
@@ -68,7 +67,7 @@ It is based on Kaido-Kit with Laravel & Filament and was an application test.
 8. Ass admin you can create projects and reports, ass developer you can add time periods to projects and edit/delete
    them.
 
-9. Run browser tests php artisan dusk & pest 
+9. Run browser tests php artisan dusk & pest
 
     ```php
     php artisan dusk:install && php artisan dusk 
@@ -77,11 +76,11 @@ It is based on Kaido-Kit with Laravel & Filament and was an application test.
    php artisan test tests/Unit/CheckPeriodTraitTest.php
    ```
 
-10. Run PHP CS Fixer and PHPStan 
+10. Run PHP CS Fixer and PHPStan
 
     ```php
-   ./vendor/bin/php-cs-fixer fix app
+    ./vendor/bin/php-cs-fixer fix app
     ```
     ```php
-   ./vendor/bin/phpstan analyse app
+    ./vendor/bin/phpstan analyse app
     ```
