@@ -1,77 +1,83 @@
 # 🚀 TimeTracker
 
-A tool to track time working on projects with role management and create project reports.
+A tool to track working time on projects with role management and create project reports.
 
-It is based on Kaido-Kit with Laravel & Filament.
+It is based on Kaido-Kit with Laravel & Filament and was an application test. 
 
 ## ✨ Features
 
-- Erstellen von Projekten, auf die Zeiten gebucht werden können ☑️
+- Creating projects for which time can be booked ☑️
 
-- Buchen von Arbeitszeiten im viertel-Stunde-Rhythmus: Es wird immer aufwärts gerundet. Eine Minute => 15 min. ☑️
+- Booking working hours in quarter-hour increments: Always round upwards. One minute => 15 minutes. ☑️
 
-- Eingabe von Zeiten im Format “Xh Ym”, wobei X und Y Ganzzahlen sind ☑️
+- Enter times in the format “Xh Ym”, where X and Y are integers ☑️
 
-- Eingabe von Zeiten im Maschinenstundenformat (0,25 - 1 für eine Stunde) ☑️
+- Entering times in machine hour format (0.25 - 1 for one hour) ☑️
 
-- Zuweisung von Zeiten zu Tagen ☑️
+- Assigning times to days ☑️
 
-- Nachträgliche Bearbeitung von Buchungen ☑️
+- Subsequent processing of bookings ☑️
 
-- “Monatsabschluss” bei der eine Zusammenfassung generiert wird und bei dem die Zeiten dann unveränderlich sind ☑️
+- “Month-end closing” where a summary is generated and the times are then unchangeable ☑️
 
-- Verifizierung der Implementierung mittels automatisierter Tests (only LoginTest done)
+- Verification of the implementation using automated tests
 
-- (Optional) Rechteunterscheidung zwischen Administratoren und Benutzern (Benutzer können keinen Monatsabschluss machen
-  und Projekte nicht löschen) ☑️
+- Rights differentiation between administrators and users (users cannot perform monthly closings or delete projects) ☑️
 
 ## 🚀 Quick Start
 
-1. Sail build & start
+
+1. Install packages
+
+    ```php
+    composer install
+    ```
+   
+2. Sail build & start
 
     ```php
     ./vendor/bin/sail up -d 
     ```
-2. Login into sail
+3. Login into sail
 
     ```php
     ./vendor/bin/sail bash 
     ```
 
-3. Install packages
+4. Install packages
 
     ```php
     composer install
     ```
 
-4. Npm Install
+5. Npm Install
 
     ```php
     npm install & npm run build 
     ```
    
-5. Run setup. Includes creating users, roles and example data
+6. Run setup. Includes creating users, roles and example data
 
     ```php
     composer setup
     ```
 
-6. Go to login page (http://127.0.0.1/) and use user "admin@admin.com" with "password". Or use one of the developer
+7. Go to login page (http://127.0.0.1/) and use user "admin@admin.com" with "password". Or use one of the developer
    accounts. (developer1@admin.com/password)
 
-7. Ass admin you can create projects and reports, ass developer you can add time periods to projects and edit/delete
+8. Ass admin you can create projects and reports, ass developer you can add time periods to projects and edit/delete
    them.
 
-8. Run browser tests php artisan dusk & pest 
+9. Run browser tests php artisan dusk & pest 
 
     ```php
-   php artisan dusk 
+    php artisan dusk:install && php artisan dusk 
     ```
    ```php
    php artisan test tests/Unit/CheckPeriodTraitTest.php
    ```
 
-9. Run PHP CS Fixer and PHPStan 
+10. Run PHP CS Fixer and PHPStan 
 
     ```php
    ./vendor/bin/php-cs-fixer fix app
