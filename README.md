@@ -60,14 +60,19 @@ It is based on Kaido-Kit with Laravel & Filament and was an application test.
     ```php
     composer setup
     ```
+7. Create App key 
 
-7. Go to login page (http://127.0.0.1/) and use user "admin@admin.com" with "password". Or use one of the developer
+    ```php
+    artisan key:generate
+   ```
+   
+8. Go to login page (http://127.0.0.1/) and use user "admin@admin.com" with "password". Or use one of the developer
    accounts. (developer1@admin.com/password)
 
-8. Ass admin you can create projects and reports, ass developer you can add time periods to projects and edit/delete
+9. Ass admin you can create projects and reports, ass developer you can add time periods to projects and edit/delete
    them.
 
-9. Run browser tests php artisan dusk & pest
+10. Run browser tests php artisan dusk & pest
 
     ```php
     php artisan dusk:install && php artisan dusk 
@@ -76,7 +81,7 @@ It is based on Kaido-Kit with Laravel & Filament and was an application test.
    php artisan test tests/Unit/CheckPeriodTraitTest.php
    ```
 
-10. Run PHP CS Fixer and PHPStan
+11. Run PHP CS Fixer and PHPStan
 
     ```php
     ./vendor/bin/php-cs-fixer fix app
