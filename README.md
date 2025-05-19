@@ -26,33 +26,37 @@ It is based on Kaido-Kit with Laravel & Filament and was an application test.
 
 ## 🚀 Quick Start
 
-1. Copy example env and install packages
+1. Copy example env file to .env 
 
     ```php
-    cp .env.example .env & composer install
+    cp .env.example .env 
     ```
 
-2. Sail build & start
-
-    ```php
-    ./vendor/bin/sail up -d 
-    ```
-3. Login into sail
-
-    ```php
-    ./vendor/bin/sail bash 
-    ```
-
-4. Install packages
+2. Install composer packages
 
     ```php
     composer install
     ```
 
-5. Npm Install
+3. Sail build & start
 
     ```php
-    npm install & npm run build 
+    ./vendor/bin/sail up -d 
+    ```
+   
+4. Login into laravel container
+
+    ```php
+    ./vendor/bin/sail bash 
+    ```
+
+5. Run mpm install and build 
+
+    ```php
+    npm install
+    ```
+    ```
+    npm run build 
     ```
 
 6. Run setup. Includes creating users, roles and example data
@@ -60,32 +64,43 @@ It is based on Kaido-Kit with Laravel & Filament and was an application test.
     ```php
     composer setup
     ```
+   
 7. Create App key 
 
     ```php
     artisan key:generate
    ```
    
-8. Go to login page (http://127.0.0.1/) and use user "admin@admin.com" with "password". Or use one of the developer
-   accounts. (developer1@admin.com/password)
+8. Go to login page (http://127.0.0.1/) and login as "admin@admin.com" with password "password". 
+Or use one of the developer accounts. (developer1@admin.com & password)
 
-9. Ass admin you can create projects and reports, ass developer you can add time periods to projects and edit/delete
+
+9. As an administrator, you can create projects and reports. As a developer, you can add time periods to projects and edit/delete
    them.
 
-10. Run browser tests php artisan dusk & pest
+## 🧪 Testing
+
+1. Run browser tests with dusk
 
     ```php
-    php artisan dusk:install && php artisan dusk 
+    php artisan dusk:install 
+    php artisan dusk 
     ```
+    
+2. Run PHPUnit test 
    ```php
    php artisan test tests/Unit/CheckPeriodTraitTest.php
    ```
 
-11. Run PHP CS Fixer and PHPStan
+## 🧹 Code style and static code analysis  
+
+1. Run PHP CS Fixer 
 
     ```php
     ./vendor/bin/php-cs-fixer fix app
     ```
+    
+2. Run PHPStan
     ```php
     ./vendor/bin/phpstan analyse app
     ```
