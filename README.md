@@ -26,10 +26,10 @@ It is based on Kaido-Kit with Laravel & Filament and was an application test.
 
 ## 🚀 Quick Start
 
-1. Install packages
+1. Copy example env and install packages
 
     ```php
-    composer install
+    cp .env.example .env & composer install
     ```
 
 2. Sail build & start
