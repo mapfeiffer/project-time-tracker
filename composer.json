@@ -8,7 +8,7 @@
         "framework",
         "filament",
         "admin-panel",
-        "starter-kit"
+        "project time tracker"
     ],
     "license": "MIT",
     "require": {
