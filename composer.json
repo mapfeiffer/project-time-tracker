@@ -1,8 +1,8 @@
 {
     "$schema": "https://getcomposer.org/schema.json",
-    "name": "siubie/kaido-kit",
+    "name": "mapfeiffer/project-time-tracker",
     "type": "project",
-    "description": "Filament Admin Panel Starter Kit with pre-configured packages and settings",
+    "description": "A tool to track working time on projects with role management and create project reports. It is based on Kaido-Kit with Laravel & Filament and was an application test.",
     "keywords": [
         "laravel",
         "framework",
