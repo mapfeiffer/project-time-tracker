@@ -2,9 +2,7 @@
 
 namespace App\Traits;
 
-//use Illuminate\Support\Facades\Log;
-
-use function PHPUnit\Framework\throwException;
+use Exception;
 
 trait PeriodTrait
 {
@@ -13,16 +11,14 @@ trait PeriodTrait
      */
     public function getPeriodFromDb($minutes): string
     {
-        if(strlen($minutes) !== 2 && strlen($minutes) !== 3)
-        {
+        if (strlen($minutes) !== 2 && strlen($minutes) !== 3) {
             throw new Exception('Wrong minutes length');
-        }
-
-        if (strlen($minutes) === 2) {
+        } elseif (strlen($minutes) === 2) {
             $minutes = '0,' . $minutes;
         } else {
             $minutes = substr($minutes, 0, 1) . ',' . substr($minutes, -2);
         }
+
         return $minutes;
     }
 

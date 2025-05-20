@@ -14,7 +14,9 @@ class Period extends Model
     /** @use HasFactory<\Database\Factories\PostFactory> */
     use HasFactory;
 
-    // add fillable
+    /**
+     * @var array<int, string>
+     */
     protected $fillable = [
         'date',
         'minutes',
@@ -22,9 +24,15 @@ class Period extends Model
         'project_id',
         'user_id',
     ];
-    // add guarded
+
+    /**
+     * @var array<int, string>
+     */
     protected $guarded = ['id'];
-    // add hidden
+
+    /**
+     * @var array<int, string>
+     */
     protected $hidden = ['created_at', 'updated_at'];
 
     public function project(): BelongsTo

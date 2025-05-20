@@ -43,9 +43,7 @@ class ProjectResource extends Resource
             ->columns([
                 TextColumn::make('name')->label('Name'),
             ])
-            ->filters([
-                //
-            ])
+            ->filters([])
             ->actions([
                 Tables\Actions\Action::make('pdf')
                     ->after(function ($record) {

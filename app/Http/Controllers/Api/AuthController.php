@@ -11,7 +11,6 @@ use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
-    //login
     public function login(LoginRequest $request)
     {
         //validate dengan Auth::attempt
@@ -61,12 +60,10 @@ class AuthController extends Controller
     //     ]);
     // }
 
-    //logout
     public function logout(Request $request)
     {
-        //hapus semua tuken by user
         $request->user()->tokens()->delete();
-        //response no content
+        // response no content
         return response()->noContent();
-    }    //
+    }
 }

@@ -29,8 +29,6 @@ use Illuminate\View\Middleware\ShareErrorsFromSession;
 use Jeffgreco13\FilamentBreezy\BreezyCore;
 use Rupadana\ApiService\ApiServicePlugin;
 use Laravel\Socialite\Contracts\User as SocialiteUserContract;
-use Illuminate\Contracts\Auth\Authenticatable;
-use Illuminate\Support\Facades\Schema;
 
 class AdminPanelProvider extends PanelProvider
 {
@@ -106,9 +104,9 @@ class AdminPanelProvider extends PanelProvider
                 ->myProfile(
                     shouldRegisterUserMenu: true, // Sets the 'account' link in the panel User Menu (default = true)
                     shouldRegisterNavigation: true, // Adds a main navigation item for the My Profile page (default = false)
-                    navigationGroup: 'Settings', // Sets the navigation group for the My Profile page (default = null)
-                    hasAvatars: true, // Enables the avatar upload form component (default = false)
-                    slug: 'my-profile'
+                    hasAvatars: true, // Sets the navigation group for the My Profile page (default = null)
+                    slug: 'my-profile', // Enables the avatar upload form component (default = false)
+                    navigationGroup: 'Settings'
                 )
                 ->avatarUploadComponent(fn ($fileUpload) => $fileUpload->disableLabel())
                 // OR, replace with your own component

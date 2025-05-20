@@ -15,7 +15,9 @@ class CreatePeriod extends CreateRecord
     protected static string $resource = PeriodResource::class;
     protected static bool $canCreateAnother = false;
 
-    //customize redirect after creation
+    /**
+     * customize redirect after creation
+     */
     public function getRedirectUrl(): string
     {
         return $this->getResource()::getUrl('index');
@@ -23,13 +25,9 @@ class CreatePeriod extends CreateRecord
 
     protected function mutateFormDataBeforeCreate(array $data): array
     {
-        Log::debug('EditPeriod@mutateFormDataBeforeSave $data:', $data);
-
         $this->getPeriodForDb($data);
-
         $data['user_id'] = Auth::id();
 
-        Log::debug('EditPeriod@mutateFormDataBeforeSave modified $data:', $data);
         return $data;
     }
 }

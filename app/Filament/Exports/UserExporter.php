@@ -18,9 +18,6 @@ class UserExporter extends Exporter
                 ->label('ID'),
             ExportColumn::make('name'),
             ExportColumn::make('email'),
-            // ExportColumn::make('email_verified_at'),
-            // ExportColumn::make('created_at'),
-            // ExportColumn::make('updated_at'),
             ExportColumn::make('avatar_url'),
         ];
     }

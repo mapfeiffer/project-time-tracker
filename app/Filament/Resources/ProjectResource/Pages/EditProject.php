@@ -3,7 +3,6 @@
 namespace App\Filament\Resources\ProjectResource\Pages;
 
 use App\Filament\Resources\ProjectResource;
-use Filament\Actions;
 use Filament\Resources\Pages\EditRecord;
 
 class EditProject extends EditRecord
@@ -12,11 +11,12 @@ class EditProject extends EditRecord
 
     protected function getHeaderActions(): array
     {
-        return [
-        ];
+        return [];
     }
 
-    //customize redirect after create
+    /**
+     * customize redirect after creation
+     */
     public function getRedirectUrl(): string
     {
         return $this->getResource()::getUrl('index');

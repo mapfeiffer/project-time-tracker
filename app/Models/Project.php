@@ -5,7 +5,6 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-//use Illuminate\Support\Facades\Log;
 use Illuminate\Database\Eloquent\Collection;
 
 class Project extends Model
@@ -13,11 +12,19 @@ class Project extends Model
     /** @use HasFactory<\Database\Factories\PostFactory> */
     use HasFactory;
 
-    // add fillable
+    /**
+     * @var array<int, string>
+     */
     protected $fillable = ['name'];
-    // add guaded
+
+    /**
+     * @var array<int, string>
+     */
     protected $guarded = ['id'];
-    // add hidden
+
+    /**
+     * @var array<int, string>
+     */
     protected $hidden = ['created_at', 'updated_at'];
 
     public function periods(): HasMany
@@ -30,12 +37,6 @@ class Project extends Model
      */
     public function periodsByYearAndMonth($yearAndMonth): Collection
     {
-        //        Log::debug('Project@periodsByYearAndMonth $yearAndMonth', [
-        //            $yearAndMonth,
-        //            $this->hasMany(Period::class)
-        //            ->where('date', 'Like', $yearAndMonth . '%')->count(),
-        //        ]);
-
         return $this->hasMany(Period::class)
             ->where('date', 'Like', $yearAndMonth . '%')->get();
     }

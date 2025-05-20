@@ -2,8 +2,6 @@
 
 namespace App\Models;
 
-// use Illuminate\Contracts\Auth\MustVerifyEmail;
-
 use Filament\Models\Contracts\FilamentUser;
 use Filament\Models\Contracts\HasAvatar;
 use Filament\Panel;
@@ -53,11 +51,6 @@ class User extends Authenticatable implements FilamentUser, HasAvatar, MustVerif
             'password' => 'hashed',
         ];
     }
-
-    //    public function getFilamentAvatarUrl(): ?string
-    //    {
-    //        return asset($this->avatar_url);
-    //    }
 
     public function getFilamentAvatarUrl(): ?string
     {

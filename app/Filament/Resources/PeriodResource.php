@@ -56,26 +56,25 @@ class PeriodResource extends Resource
                 TextColumn::make('project.name')->label('Project')->searchable()->sortable(),
                 TextColumn::make('date')->label('Date')->searchable()->sortable(),
                 TextColumn::make('minutes')->label('Period in minutes')
-                    ->formatStateUsing(fn(string $state): string => strlen($state) === 2
+                    ->formatStateUsing(
+                        fn (string $state): string => strlen($state) === 2
                         ? '0,' . $state
                         : substr($state, 0, 1) . ',' . substr($state, -2),
                     ),
                 IconColumn::make('reported')->label('Reported')
                     ->sortable()
-                    ->icon(fn(bool $state): string => match ($state) {
+                    ->icon(fn (bool $state): string => match ($state) {
                         false => 'heroicon-s-x-circle',
                         true => 'heroicon-s-check-circle',
                     }),
             ])
-            ->filters([
-                //
-            ])
+            ->filters([])
             ->actions([
                 Tables\Actions\EditAction::make()->hidden(
-                    fn($record) => FacadesAuth::id() !== 1 && $record->reported === true
+                    fn ($record) => FacadesAuth::id() !== 1 && $record->reported === true
                 ),
                 Tables\Actions\DeleteAction::make()->hidden(
-                    fn($record) => FacadesAuth::id() !== 1 && $record->reported === true
+                    fn ($record) => FacadesAuth::id() !== 1 && $record->reported === true
                 ),
             ])
             ->bulkActions([
@@ -87,9 +86,7 @@ class PeriodResource extends Resource
 
     public static function getRelations(): array
     {
-        return [
-            //
-        ];
+        return [];
     }
 
     public static function getPages(): array

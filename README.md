@@ -68,7 +68,7 @@ It is based on Kaido-Kit with Laravel & Filament and was an application test.
 7. Create App key 
 
     ```php
-    artisan key:generate
+    php artisan key:generate
    ```
    
 8. Go to login page (http://127.0.0.1/) and login as "admin@admin.com" with password "password". 
