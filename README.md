@@ -2,7 +2,11 @@
 
 A tool to track working time on projects with role management and create project reports.
 
-It is based on Kaido-Kit with Laravel & Filament and was an application test.
+It is based on Kaido-Kit (https://github.com/siubie/kaido-kit) with Laravel & Filament and was an application test.
+
+![PHP Version](https://img.shields.io/badge/PHP-8.2-blue?style=flat-square&logo=php)
+![Laravel Version](https://img.shields.io/badge/Laravel-12.0-red?style=flat-square&logo=laravel)
+![Filament Version](https://img.shields.io/badge/Filament-3.2-purple?style=flat-square)
 
 ## ✨ Features
 
@@ -26,81 +30,99 @@ It is based on Kaido-Kit with Laravel & Filament and was an application test.
 
 ## 🚀 Quick Start
 
-1. Copy example env file to .env 
+Before beginning with the installation, you will need the following
 
-    ```php
-    cp .env.example .env 
-    ```
+- Docker 
+- Composer 
 
-2. Install composer packages
+### Clone the repository 
 
-    ```php
-    composer install
-    ```
+- Open your terminal or command prompt
+- Navigate to the directory where you want to save the project
+- Use the git clone command followed by the repository URL
 
-3. Sail build & start
+```php
+git clone https://github.com/mapfeiffer/project-time-tracker.git
+```
 
-    ```php
-    ./vendor/bin/sail up -d 
-    ```
+### Copy example env file to .env 
+
+```php
+cp .env.example .env 
+```
+
+### Install composer packages
+
+```php
+composer install
+```
+
+### Sail build & start
+
+```php
+./vendor/bin/sail up -d 
+```
+
+### Login into laravel container
+
+```php
+./vendor/bin/sail bash 
+```
+
+### Run mpm install and build 
+
+```php
+npm install
+```
+```
+npm run build 
+```
+
+### Run setup. Includes creating users, roles and example data
+
+```php
+composer setup
+```
+
+### Create an App key 
+
+```php
+php artisan key:generate
+```
    
-4. Login into laravel container
+### Using 
 
-    ```php
-    ./vendor/bin/sail bash 
-    ```
-
-5. Run mpm install and build 
-
-    ```php
-    npm install
-    ```
-    ```
-    npm run build 
-    ```
-
-6. Run setup. Includes creating users, roles and example data
-
-    ```php
-    composer setup
-    ```
-   
-7. Create App key 
-
-    ```php
-    php artisan key:generate
-   ```
-   
-8. Go to login page (http://127.0.0.1/) and login as "admin@admin.com" with password "password". 
-Or use one of the developer accounts. (developer1@admin.com & password)
-
-
-9. As an administrator, you can create projects and reports. As a developer, you can add time periods to projects and edit/delete
-   them.
+- Go to login page (http://127.0.0.1/) and login as "admin@admin.com" with password "password". 
+- Or use one of the developer accounts. (developer1@admin.com & password).
+- As an administrator, you can create projects and reports. 
+- As a developer, you can add time periods to projects and edit/delete them.
+- As an administrator, you can change access for any user. For example, you can give a user administrator permissions. 
 
 ## 🧪 Testing
 
-1. Run browser tests with dusk
+### Run browser tests with dusk
 
-    ```php
-    php artisan dusk:install 
-    php artisan dusk 
-    ```
+```php
+php artisan dusk:install 
+php artisan dusk 
+```
     
-2. Run PHPUnit test 
-   ```php
-   php artisan test tests/Unit/CheckPeriodTraitTest.php
-   ```
+### Run PHPUnit test 
+
+```php
+php artisan test tests/Unit/CheckPeriodTraitTest.php
+```
 
 ## 🧹 Code style and static code analysis  
 
-1. Run PHP CS Fixer 
+### Run PHP CS Fixer 
 
-    ```php
-    ./vendor/bin/php-cs-fixer fix app
-    ```
+```php
+./vendor/bin/php-cs-fixer fix app
+```
     
-2. Run PHPStan
-    ```php
-    ./vendor/bin/phpstan analyse app
-    ```
+### Run PHPStan
+
+```php
+./vendor/bin/phpstan analyse app
+```
