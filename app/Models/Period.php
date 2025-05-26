@@ -2,11 +2,14 @@
 
 namespace App\Models;
 
+use App\Models\Scopes\PeriodUserScope;
 use App\Traits\PeriodTrait;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Attributes\ScopedBy;
 
+#[ScopedBy([PeriodUserScope::class])]
 class Period extends Model
 {
     use PeriodTrait;
