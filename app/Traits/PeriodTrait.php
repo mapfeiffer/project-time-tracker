@@ -9,7 +9,7 @@ trait PeriodTrait
     /**
      * @throws Exception
      */
-    public function getPeriodFromDb($minutes): string
+    public function getPeriodFromDb(string $minutes): string
     {
         if (strlen($minutes) !== 2 && strlen($minutes) !== 3) {
             throw new Exception('Wrong minutes length');
