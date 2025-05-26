@@ -33,8 +33,13 @@ jobs:
         DB_CONNECTION: sqlite
         DB_DATABASE: database/database.sqlite
       run: php artisan test tests/Unit/CheckPeriodTraitTest.php
-    - name: Execute dusk tests 
+    - name: Run php-cs-fixer
       env:
         DB_CONNECTION: sqlite
         DB_DATABASE: database/database.sqlite
-      run: php artisan dusk:install && php artisan dusk
+      run: ./vendor/bin/php-cs-fixer check app
+    - name: Run phpstan
+      env:
+        DB_CONNECTION: sqlite
+        DB_DATABASE: database/database.sqlite
+      run: ./vendor/bin/phpstan analyse app
