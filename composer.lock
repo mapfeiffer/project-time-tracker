@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d76fde27108d746546cde6589c916b8e",
+    "content-hash": "c0da9cf2f254368c439628114698a27f",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -7285,23 +7285,23 @@
         },
         {
             "name": "resend/resend-laravel",
-            "version": "v0.16.1",
+            "version": "v0.19.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/resend/resend-laravel.git",
-                "reference": "df4b654f42d8f306e78ce2b90f10762f77608ecb"
+                "reference": "ce11e363c42c1d6b93983dfebbaba3f906863c3a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/resend/resend-laravel/zipball/df4b654f42d8f306e78ce2b90f10762f77608ecb",
-                "reference": "df4b654f42d8f306e78ce2b90f10762f77608ecb",
+                "url": "https://api.github.com/repos/resend/resend-laravel/zipball/ce11e363c42c1d6b93983dfebbaba3f906863c3a",
+                "reference": "ce11e363c42c1d6b93983dfebbaba3f906863c3a",
                 "shasum": ""
             },
             "require": {
                 "illuminate/http": "^10.0|^11.0|^12.0",
                 "illuminate/support": "^10.0|^11.0|^12.0",
                 "php": "^8.1",
-                "resend/resend-php": "^0.15.0",
+                "resend/resend-php": "^0.18.0",
                 "symfony/mailer": "^6.2|^7.0"
             },
             "require-dev": {
@@ -7348,22 +7348,22 @@
             ],
             "support": {
                 "issues": "https://github.com/resend/resend-laravel/issues",
-                "source": "https://github.com/resend/resend-laravel/tree/v0.16.1"
+                "source": "https://github.com/resend/resend-laravel/tree/v0.19.0"
             },
-            "time": "2025-03-02T04:15:23+00:00"
+            "time": "2025-05-06T21:36:51+00:00"
         },
         {
             "name": "resend/resend-php",
-            "version": "v0.15.2",
+            "version": "v0.18.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/resend/resend-php.git",
-                "reference": "98356bf1d0631c511cb847cb6f1b55f32bc7d38d"
+                "reference": "d6194782ff1952627bcdd52e5958572c4bd98043"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/resend/resend-php/zipball/98356bf1d0631c511cb847cb6f1b55f32bc7d38d",
-                "reference": "98356bf1d0631c511cb847cb6f1b55f32bc7d38d",
+                "url": "https://api.github.com/repos/resend/resend-php/zipball/d6194782ff1952627bcdd52e5958572c4bd98043",
+                "reference": "d6194782ff1952627bcdd52e5958572c4bd98043",
                 "shasum": ""
             },
             "require": {
@@ -7405,9 +7405,9 @@
             ],
             "support": {
                 "issues": "https://github.com/resend/resend-php/issues",
-                "source": "https://github.com/resend/resend-php/tree/v0.15.2"
+                "source": "https://github.com/resend/resend-php/tree/v0.18.0"
             },
-            "time": "2025-03-14T05:34:18+00:00"
+            "time": "2025-05-06T21:18:26+00:00"
         },
         {
             "name": "rupadana/filament-api-service",
