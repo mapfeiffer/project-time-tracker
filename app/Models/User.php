@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Traits\EloquentHelpers;
 use Filament\Models\Contracts\FilamentUser;
 use Filament\Models\Contracts\HasAvatar;
 use Filament\Panel;
@@ -14,6 +15,10 @@ use Jeffgreco13\FilamentBreezy\Traits\TwoFactorAuthenticatable;
 use Laravel\Sanctum\HasApiTokens;
 use Spatie\Permission\Traits\HasRoles;
 
+/**
+ * @method static User find(int $id)
+ * @method static User findOrFail(int $id)
+ */
 class User extends Authenticatable implements FilamentUser, HasAvatar, MustVerifyEmail
 {
     /** @use HasFactory<\Database\Factories\UserFactory> */
@@ -22,6 +27,7 @@ class User extends Authenticatable implements FilamentUser, HasAvatar, MustVerif
     use HasRoles;
     use TwoFactorAuthenticatable;
     use HasApiTokens;
+    use EloquentHelpers;
 
     /**
      * @var array<int, string>

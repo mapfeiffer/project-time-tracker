@@ -43,6 +43,7 @@ Before beginning with the installation, you will need the following
 
 ```php
 git clone https://github.com/mapfeiffer/project-time-tracker.git
+cd project-time-tracker
 ```
 
 ### Copy example env file to .env 
