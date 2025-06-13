@@ -6,7 +6,7 @@ use App\Filament\Resources\PeriodResource;
 use Filament\Resources\Pages\CreateRecord;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
-use App\Traits\PeriodTrait;
+use App\Models\Traits\PeriodTrait;
 
 class CreatePeriod extends CreateRecord
 {
