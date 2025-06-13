@@ -1,8 +1,6 @@
 <?php
 
-use App\Models\Period;
-use App\Traits\PeriodTrait;
-use Illuminate\Support\Facades\Log;
+use App\Models\Traits\PeriodTrait;
 
 uses(PeriodTrait::class);
 
@@ -50,9 +48,6 @@ test('get periods for db', function () {
         $data['period'] = $period['input'];
 
         $this->getPeriodForDb($data);
-
-//        Log::debug('CheckPeriodTrait@getPeriodForDb $data[minutes]:', [(int)$data['minutes']]);
-//        Log::debug('CheckPeriodTrait@getPeriodFromDb:', [$this->getPeriodFromDb((int)$data['minutes'])]);
 
         expect((int)$data['minutes'])->toBe($period['assert'])
             ->and($this->getPeriodFromDb((int)$data['minutes']))->toBe($period['assert2']);
