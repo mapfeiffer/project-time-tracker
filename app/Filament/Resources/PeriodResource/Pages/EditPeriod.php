@@ -3,7 +3,7 @@
 namespace App\Filament\Resources\PeriodResource\Pages;
 
 use App\Filament\Resources\PeriodResource;
-use App\Traits\PeriodTrait;
+use App\Models\Traits\PeriodTrait;
 use Filament\Resources\Pages\EditRecord;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
