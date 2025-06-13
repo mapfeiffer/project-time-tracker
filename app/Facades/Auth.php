@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Auth as LaravelAuth;
 
 /**
  * Class Auth - Custom facade declaration for static analysis
- * 
+ *
  * @method static bool check()
  * @method static bool guest()
  * @method static User|null user()
@@ -28,7 +28,7 @@ use Illuminate\Support\Facades\Auth as LaravelAuth;
  * @method static \Illuminate\Auth\AuthManager guard(string|null $name = null)
  * @method static \Illuminate\Contracts\Auth\StatefulGuard|mixed getDefaultDriver()
  * @method static void shouldUse(string $name)
- * 
+ *
  * @see \Illuminate\Auth\AuthManager
  * @see \Illuminate\Contracts\Auth\Factory
  * @see \Illuminate\Contracts\Auth\Guard
