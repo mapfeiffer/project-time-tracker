@@ -7,7 +7,7 @@ use Illuminate\Auth\AuthManager;
 
 /**
  * A trait with method type hints for static analysis tools - specifically for Auth facade
- * 
+ *
  * @method static bool check()
  * @method static bool guest()
  * @method static User|null user()

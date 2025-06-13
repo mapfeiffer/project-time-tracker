@@ -4,7 +4,7 @@ namespace App\Models\Traits;
 
 /**
  * A trait to provide method hints for static analysis tools
- * 
+ *
  * @method static static find(int $id)
  * @method static static findOrFail(int $id)
  * @method static static findOrNew(int $id)
@@ -35,7 +35,7 @@ namespace App\Models\Traits;
  * @method static \Illuminate\Database\Eloquent\Builder withCount($relations)
  * @method static \Illuminate\Database\Eloquent\Builder has($relation, $operator = '>=', $count = 1, $boolean = 'and', \Closure $callback = null)
  * @method static \Illuminate\Database\Eloquent\Builder doesntHave($relation, $boolean = 'and', \Closure $callback = null)
- * 
+ *
  * // Spatie Permission methods
  * @method bool hasRole($roles, $guard = null)
  * @method bool hasAnyRole($roles, $guard = null)
