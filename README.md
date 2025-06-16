@@ -73,10 +73,7 @@ composer install
 ### Run mpm install and build 
 
 ```php
-npm install
-```
-```
-npm run build 
+npm install && npm run build 
 ```
 
 ### Run setup. Includes creating users, roles and example data
@@ -93,8 +90,8 @@ php artisan key:generate
    
 ### Using 
 
-- Go to login page (http://127.0.0.1/) and login as "admin@admin.com" with password "password". 
-- Or use one of the developer accounts. (developer1@admin.com & password).
+- Go to login page (http://localhost/) and login as "admin@admin.com" with password "password". 
+- Or use one of the developer accounts. ("developer1@admin.com" and "password").
 - As an administrator, you can create projects and reports. 
 - As a developer, you can add time periods to projects and edit/delete them.
 - As an administrator, you can change access for any user. For example, you can give a user administrator permissions. 
