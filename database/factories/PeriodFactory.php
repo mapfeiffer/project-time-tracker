@@ -4,7 +4,7 @@ namespace Database\Factories;
 
 use App\Models\Period;
 use App\Models\Project;
-use App\Traits\PeriodTrait;
+use App\Models\Traits\PeriodTrait;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Facades\Log;
 
