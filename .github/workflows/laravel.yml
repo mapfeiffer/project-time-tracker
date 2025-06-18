@@ -33,11 +33,11 @@ jobs:
         DB_CONNECTION: sqlite
         DB_DATABASE: database/database.sqlite
       run: php artisan test tests/Unit/CheckPeriodTraitTest.php
-    - name: Run php-cs-fixer
+    - name: Run laravel pint
       env:
         DB_CONNECTION: sqlite
         DB_DATABASE: database/database.sqlite
-      run: ./vendor/bin/php-cs-fixer check app
+      run: ./vendor/bin/pint -test
     - name: Run phpstan
       env:
         DB_CONNECTION: sqlite
