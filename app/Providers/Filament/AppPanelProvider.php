@@ -102,7 +102,7 @@ class AppPanelProvider extends PanelProvider
                             ->icon('fab-google')
                             ->color(Color::hex('#2f2a6b'))
                             ->outlined(true)
-                            ->stateless(false)
+                            ->stateless(false),
                     ])->registration(true)
                     ->createUserUsing(function (string $provider, SocialiteUserContract $oauthUser, FilamentSocialitePlugin $plugin) {
                         $user = User::firstOrNew([
@@ -116,6 +116,7 @@ class AppPanelProvider extends PanelProvider
                         return $user;
                     });
         }
+
         return $plugins;
     }
 }

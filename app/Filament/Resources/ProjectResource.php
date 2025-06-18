@@ -3,7 +3,6 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\ProjectResource\Pages;
-use App\Filament\Resources\ProjectResource\RelationManagers;
 use App\Models\Period;
 use App\Models\Project;
 use Barryvdh\DomPDF\Facade\Pdf;
@@ -24,6 +23,7 @@ class ProjectResource extends Resource
     protected static ?string $model = Project::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+
     protected static ?string $activeNavigationIcon = 'heroicon-s-rectangle-stack';
 
     public static function form(Form $form): Form
@@ -67,11 +67,12 @@ class ProjectResource extends Resource
                     ->action(function (array $data, Model $record) {
                         $yearAndMonth = Carbon::createFromDate($data['month'])->format('Y-m');
                         Log::debug('ProjectResource@table $data', [$yearAndMonth]);
+
                         return response()->streamDownload(function () use ($record, $yearAndMonth) {
                             echo Pdf::loadHtml(
                                 Blade::render('monthly_settlement', ['record' => $record, 'yearAndMonth' => $yearAndMonth]),
                             )->stream();
-                        }, $record->name . '.pdf');
+                        }, $record->name.'.pdf');
                     }),
                 Tables\Actions\EditAction::make(),
                 Tables\Actions\DeleteAction::make()
@@ -81,7 +82,7 @@ class ProjectResource extends Resource
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
-//                    Tables\Actions\DeleteBulkAction::make(),
+                    //                    Tables\Actions\DeleteBulkAction::make(),
                 ]),
             ]);
     }

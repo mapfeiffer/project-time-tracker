@@ -2,7 +2,6 @@
 
 namespace App\Facades;
 
-use App\Models\Traits\AuthHelpers;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth as LaravelAuth;
 

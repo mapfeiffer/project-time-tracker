@@ -2,10 +2,9 @@
 
 namespace App\Policies;
 
-use App\Models\User;
 use App\Models\Period;
+use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
-use Illuminate\Support\Facades\Auth;
 
 class PeriodPolicy
 {
@@ -24,8 +23,7 @@ class PeriodPolicy
      */
     public function view(User $user, Period $period): bool
     {
-        return $period->user_id === Auth::id() || $user->hasRole('super_admin')
-            && $user->can('view_period');
+        return $user->can('view_period');
     }
 
     /**
@@ -41,10 +39,7 @@ class PeriodPolicy
      */
     public function update(User $user, Period $period): bool
     {
-        return $period->user_id === Auth::id()
-            && $period->reported === false
-            && $user->can('update_period')
-            || $user->hasRole('super_admin');
+        return $user->can('update_period');
     }
 
     /**
@@ -52,10 +47,7 @@ class PeriodPolicy
      */
     public function delete(User $user, Period $period): bool
     {
-        return $period->user_id === Auth::id()
-            && $period->reported === false
-            && $user->can('delete_period')
-            || $user->hasRole('super_admin');
+        return $user->can('delete_period');
     }
 
     /**
@@ -63,8 +55,7 @@ class PeriodPolicy
      */
     public function deleteAny(User $user): bool
     {
-        return $user->hasRole('super_admin')
-            && $user->can('delete_any_period');
+        return $user->can('delete_any_period');
     }
 
     /**
@@ -72,8 +63,7 @@ class PeriodPolicy
      */
     public function forceDelete(User $user, Period $period): bool
     {
-        return $user->hasRole('super_admin')
-            && $user->can('force_delete_period');
+        return $user->can('force_delete_period');
     }
 
     /**
@@ -81,8 +71,7 @@ class PeriodPolicy
      */
     public function forceDeleteAny(User $user): bool
     {
-        return $user->hasRole('super_admin')
-            && $user->can('force_delete_any_period');
+        return $user->can('force_delete_any_period');
     }
 
     /**
@@ -90,8 +79,7 @@ class PeriodPolicy
      */
     public function restore(User $user, Period $period): bool
     {
-        return $user->hasRole('super_admin')
-            && $user->can('restore_period');
+        return $user->can('restore_period');
     }
 
     /**
@@ -99,8 +87,7 @@ class PeriodPolicy
      */
     public function restoreAny(User $user): bool
     {
-        return $user->hasRole('super_admin')
-            && $user->can('restore_any_period');
+        return $user->can('restore_any_period');
     }
 
     /**

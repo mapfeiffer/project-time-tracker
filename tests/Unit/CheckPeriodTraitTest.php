@@ -49,8 +49,8 @@ test('get periods for db', function () {
 
         $this->getPeriodForDb($data);
 
-        expect((int)$data['minutes'])->toBe($period['assert'])
-            ->and($this->getPeriodFromDb((int)$data['minutes']))->toBe($period['assert2']);
+        expect((int) $data['minutes'])->toBe($period['assert'])
+            ->and($this->getPeriodFromDb((int) $data['minutes']))->toBe($period['assert2']);
 
     }
 });

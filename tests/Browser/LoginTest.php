@@ -5,9 +5,9 @@ namespace Tests\Browser;
 use App\Models\Period;
 use App\Models\Project;
 use App\Models\User;
+use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Laravel\Dusk\Browser;
 use Tests\DuskTestCase;
-use Illuminate\Foundation\Testing\DatabaseMigrations;
 
 class LoginTest extends DuskTestCase
 {
@@ -20,14 +20,14 @@ class LoginTest extends DuskTestCase
 
         $this->browse(function (Browser $browser) {
             $browser
-                ->visit("/login")
+                ->visit('/login')
                 ->loginAs(User::find(1))
-                ->assertSee("TimeTracker")
-                ->assertSee("Email address")
-                ->assertSee("Password")
-                ->press("Sign in");
+                ->assertSee('TimeTracker')
+                ->assertSee('Email address')
+                ->assertSee('Password')
+                ->press('Sign in');
         });
 
-        //$this->assertDatabaseHas('sessions', ['user_id' => 1]);
+        // $this->assertDatabaseHas('sessions', ['user_id' => 1]);
     }
 }

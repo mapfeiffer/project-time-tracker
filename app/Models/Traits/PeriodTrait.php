@@ -14,9 +14,9 @@ trait PeriodTrait
         if (strlen($minutes) !== 2 && strlen($minutes) !== 3) {
             throw new Exception('Wrong minutes length');
         } elseif (strlen($minutes) === 2) {
-            $minutes = '0,' . $minutes;
+            $minutes = '0,'.$minutes;
         } else {
-            $minutes = substr($minutes, 0, 1) . ',' . substr($minutes, -2);
+            $minutes = substr($minutes, 0, 1).','.substr($minutes, -2);
         }
 
         return $minutes;
@@ -33,7 +33,7 @@ trait PeriodTrait
             $value > 50 && $value <= 75 => 75,
         };
 
-        return rand(1, 9) . $afterComma;
+        return rand(1, 9).$afterComma;
     }
 
     public function getPeriodForDb(&$data)
@@ -55,12 +55,12 @@ trait PeriodTrait
                 $periodRounded = '00';
             }
 
-            $data['minutes'] = $periodArray[0] . $periodRounded;
+            $data['minutes'] = $periodArray[0].$periodRounded;
         } else {
             if (str_contains($data['period'], ',')) {
                 $data['minutes'] = str_replace(',', '', $data['period']);
             } else {
-                $data['minutes'] = $data['period'] . '00';
+                $data['minutes'] = $data['period'].'00';
             }
         }
     }

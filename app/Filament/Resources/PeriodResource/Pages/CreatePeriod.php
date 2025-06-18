@@ -3,16 +3,16 @@
 namespace App\Filament\Resources\PeriodResource\Pages;
 
 use App\Filament\Resources\PeriodResource;
+use App\Models\Traits\PeriodTrait;
 use Filament\Resources\Pages\CreateRecord;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Log;
-use App\Models\Traits\PeriodTrait;
 
 class CreatePeriod extends CreateRecord
 {
     use PeriodTrait;
 
     protected static string $resource = PeriodResource::class;
+
     protected static bool $canCreateAnother = false;
 
     /**

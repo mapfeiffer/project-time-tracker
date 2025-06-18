@@ -2,27 +2,27 @@
 
 namespace App\Filament\Resources;
 
-use App\Models\User;
-use Filament\Tables;
-use Filament\Forms\Form;
-use Filament\Tables\Table;
-use Filament\Infolists\Infolist;
-use Filament\Resources\Resource;
-use Filament\Tables\Actions\Action;
-use Filament\Forms\Components\Select;
 use App\Filament\Exports\UserExporter;
 use App\Filament\Imports\UserImporter;
+use App\Filament\Resources\UserResource\Pages;
+use App\Models\User;
 use Filament\Forms\Components\Section;
-use Filament\Support\Enums\FontWeight;
+use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
+use Filament\Forms\Form;
+use Filament\Infolists\Components\Section as InfolistSection;
+use Filament\Infolists\Components\TextEntry;
+use Filament\Infolists\Infolist;
+use Filament\Resources\Resource;
+use Filament\Support\Enums\FontWeight;
+use Filament\Tables;
+use Filament\Tables\Actions\Action;
 use Filament\Tables\Actions\ExportAction;
+use Filament\Tables\Actions\ExportBulkAction;
 use Filament\Tables\Actions\ImportAction;
 use Filament\Tables\Filters\SelectFilter;
-use Filament\Infolists\Components\TextEntry;
-use Filament\Tables\Actions\ExportBulkAction;
-use App\Filament\Resources\UserResource\Pages;
+use Filament\Tables\Table;
 use STS\FilamentImpersonate\Tables\Actions\Impersonate;
-use Filament\Infolists\Components\Section as InfolistSection;
 
 class UserResource extends Resource
 {
@@ -37,13 +37,13 @@ class UserResource extends Resource
                 Section::make(
                     'User Information'
                 )->schema([
-                            TextInput::make('name')
-                                ->required(),
-                            TextInput::make('email')
-                                ->required(),
-                            TextInput::make('password')
-                                ->required(),
-                        ]),
+                    TextInput::make('name')
+                        ->required(),
+                    TextInput::make('email')
+                        ->required(),
+                    TextInput::make('password')
+                        ->required(),
+                ]),
             ]);
     }
 
@@ -63,7 +63,7 @@ class UserResource extends Resource
                         ->grow(false)
                         ->getStateUsing(fn ($record) => $record->avatar_url
                             ? $record->avatar_url
-                            : "https://ui-avatars.com/api/?name=" . urlencode($record->name)),
+                            : 'https://ui-avatars.com/api/?name='.urlencode($record->name)),
                     Tables\Columns\TextColumn::make('name')
                         ->searchable()
                         ->weight(FontWeight::Bold),
@@ -76,7 +76,7 @@ class UserResource extends Resource
                             ->icon('heroicon-m-envelope')
                             ->searchable()
                             ->grow(false),
-                    ])->alignStart()->visibleFrom('lg')->space(1)
+                    ])->alignStart()->visibleFrom('lg')->space(1),
                 ]),
             ])
             ->filters([
@@ -107,14 +107,14 @@ class UserResource extends Resource
                 ExportAction::make()
                     ->exporter(UserExporter::class),
                 ImportAction::make()
-                    ->importer(UserImporter::class)
+                    ->importer(UserImporter::class),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
                     Tables\Actions\DeleteBulkAction::make(),
                 ]),
                 ExportBulkAction::make()
-                    ->exporter(UserExporter::class)
+                    ->exporter(UserExporter::class),
             ]);
     }
 
@@ -132,6 +132,7 @@ class UserResource extends Resource
             'edit' => Pages\EditUser::route('/{record}/edit'),
         ];
     }
+
     public static function infolist(Infolist $infolist): Infolist
     {
         return $infolist
