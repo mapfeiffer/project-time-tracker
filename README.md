@@ -113,10 +113,10 @@ php artisan test tests/Unit/CheckPeriodTraitTest.php
 
 ## 🧹 Code style and static code analysis  
 
-### Run PHP CS Fixer 
+### Run Laravel Pint
 
 ```php
-./vendor/bin/php-cs-fixer fix app
+./vendor/bin/pint
 ```
     
 ### Run PHPStan
