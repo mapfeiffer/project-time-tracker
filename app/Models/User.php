@@ -21,13 +21,15 @@ use Spatie\Permission\Traits\HasRoles;
  */
 class User extends Authenticatable implements FilamentUser, HasAvatar, MustVerifyEmail
 {
+    use EloquentHelpers;
+    use HasApiTokens;
+
     /** @use HasFactory<\Database\Factories\UserFactory> */
     use HasFactory;
-    use Notifiable;
+
     use HasRoles;
+    use Notifiable;
     use TwoFactorAuthenticatable;
-    use HasApiTokens;
-    use EloquentHelpers;
 
     /**
      * @var array<int, string>

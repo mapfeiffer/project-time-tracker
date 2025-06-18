@@ -13,6 +13,7 @@ use Filament\Pages\SettingsPage;
 class ManageSetting extends SettingsPage
 {
     use HasPageShield;
+
     protected static ?string $navigationIcon = 'heroicon-o-cog-6-tooth';
 
     protected static string $settings = KaidoSetting::class;

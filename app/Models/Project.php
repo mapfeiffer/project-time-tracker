@@ -2,10 +2,10 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Collection;
 
 class Project extends Model
 {
@@ -38,7 +38,7 @@ class Project extends Model
     public function periodsByYearAndMonth($yearAndMonth): Collection
     {
         return $this->hasMany(Period::class)
-            ->where('date', 'Like', $yearAndMonth . '%')->get();
+            ->where('date', 'Like', $yearAndMonth.'%')->get();
     }
 
     /**
@@ -51,7 +51,8 @@ class Project extends Model
         } else {
             $minutes = $this->periodsByYearAndMonth($yearAndMonth)->sum('minutes');
         }
-        $result = substr($minutes, 0, -2) . ',' . substr($minutes, -2);
+        $result = substr($minutes, 0, -2).','.substr($minutes, -2);
+
         return $result !== ',0' ? $result : 0;
     }
 }

@@ -13,13 +13,13 @@ class AuthController extends Controller
 {
     public function login(LoginRequest $request)
     {
-        //validate dengan Auth::attempt
+        // validate dengan Auth::attempt
         if (Auth::attempt($request->only('email', 'password'))) {
-            //jika berhasil buat token
+            // jika berhasil buat token
             $user = User::where('email', $request->email)->first();
-            //token lama dihapus
+            // token lama dihapus
             $user->tokens()->delete();
-            //token baru di create
+            // token baru di create
             $abilities = $user->getAllPermissions()->pluck('name')->toArray();
             // Filter abilities containing ':' and cut any string after '_'
             $abilities = array_map(function ($ability) {
@@ -27,22 +27,22 @@ class AuthController extends Controller
             }, array_filter($abilities, function ($ability) {
                 return strpos($ability, ':') !== false;
             }));
-            //create token with abilities
+            // create token with abilities
             $token = $user->createToken('token', $abilities)->plainTextToken;
 
             return new LoginResource([
                 'token' => $token,
-                'user' => $user
+                'user' => $user,
             ]);
         } else {
-            //jika gagal kirim response error
+            // jika gagal kirim response error
             return response()->json([
-                'message' => 'Invalid Credentials'
+                'message' => 'Invalid Credentials',
             ], 401);
         }
     }
 
-    //register
+    // register
     // public function register(RegisterRequest $request)
     // {
     //     //save user to user table
@@ -63,6 +63,7 @@ class AuthController extends Controller
     public function logout(Request $request)
     {
         $request->user()->tokens()->delete();
+
         // response no content
         return response()->noContent();
     }

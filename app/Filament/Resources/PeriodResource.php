@@ -3,7 +3,6 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\PeriodResource\Pages;
-use App\Filament\Resources\PeriodResource\RelationManagers;
 use App\Models\Period;
 use App\Models\Project;
 use Filament\Forms\Components\DatePicker;
@@ -22,6 +21,7 @@ class PeriodResource extends Resource
     protected static ?string $model = Period::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-clock';
+
     protected static ?string $activeNavigationIcon = 'heroicon-s-clock';
 
     public static function form(Form $form): Form
@@ -41,7 +41,7 @@ class PeriodResource extends Resource
                     ->minDate(now()->subYears(5))
                     ->maxDate(now())
                     ->default(now()),
-//                  ->disabledDates(['2000-01-03', '2000-01-15', '2000-01-20']), // ToDo: hide dates already in DB for project
+                //                  ->disabledDates(['2000-01-03', '2000-01-15', '2000-01-20']), // ToDo: hide dates already in DB for project
                 TextInput::make('period')
                     ->label('Eingabe von Zeiten im Format “Xh Ym” oder im Maschinenstundenformat (0,25 - 1 für eine Stunde)')
                     ->helperText('Eingabe von Zeiten im Format “Xh Ym”, wobei X und Y Ganzzahlen sind, oder eingabe von Zeiten im Maschinenstundenformat (0,25 - 1 für eine Stunde)')
@@ -58,8 +58,8 @@ class PeriodResource extends Resource
                 TextColumn::make('minutes')->label('Period in minutes')
                     ->formatStateUsing(
                         fn (string $state): string => strlen($state) === 2
-                        ? '0,' . $state
-                        : substr($state, 0, 1) . ',' . substr($state, -2),
+                        ? '0,'.$state
+                        : substr($state, 0, 1).','.substr($state, -2),
                     ),
                 IconColumn::make('reported')->label('Reported')
                     ->sortable()
