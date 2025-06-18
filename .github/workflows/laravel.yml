@@ -37,7 +37,7 @@ jobs:
       env:
         DB_CONNECTION: sqlite
         DB_DATABASE: database/database.sqlite
-      run: ./vendor/bin/pint -test
+      run: ./vendor/bin/pint test
     - name: Run phpstan
       env:
         DB_CONNECTION: sqlite
