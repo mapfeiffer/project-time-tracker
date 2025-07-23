@@ -88,6 +88,14 @@
             "@php artisan shield:super-admin --user=1",
             "@php artisan db:seed --class=ShieldSeeder",
             "@php artisan storage:link"
+        ],
+        "test:pint": "pint",
+        "test:phpstan": "phpstan analyse app",
+        "test:type-coverage": "php artisan test",
+        "test": [
+            "@test:type-coverage",
+            "@test:pint",
+            "@test:phpstan"
         ]
     },
     "extra": {

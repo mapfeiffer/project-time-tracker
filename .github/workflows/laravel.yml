@@ -28,18 +28,8 @@ jobs:
       run: |
         mkdir -p database
         touch database/database.sqlite
-    - name: Execute tests (Unit and Feature tests) via PHPUnit/Pest
+    - name: Run composer test
       env:
         DB_CONNECTION: sqlite
         DB_DATABASE: database/database.sqlite
-      run: php artisan test tests/Unit/CheckPeriodTraitTest.php
-    - name: Run laravel pint
-      env:
-        DB_CONNECTION: sqlite
-        DB_DATABASE: database/database.sqlite
-      run: ./vendor/bin/pint --test
-    - name: Run phpstan
-      env:
-        DB_CONNECTION: sqlite
-        DB_DATABASE: database/database.sqlite
-      run: ./vendor/bin/phpstan analyse app
+      run: composer test
