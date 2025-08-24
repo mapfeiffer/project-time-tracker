@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "48f6478d3b2d093877b28b168d001de9",
+    "content-hash": "23d2c10f9bfa90b32e031552419ab5c5",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -731,20 +731,20 @@
         },
         {
             "name": "coolsam/flatpickr",
-            "version": "v4.1.0",
+            "version": "v5.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/coolsam726/flatpickr.git",
-                "reference": "5339ea1160f4927cf7f55c8c3ea5eb04f4b9e04c"
+                "reference": "845b494ee78d909396568ca2a73246c8e76ee6f9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/coolsam726/flatpickr/zipball/5339ea1160f4927cf7f55c8c3ea5eb04f4b9e04c",
-                "reference": "5339ea1160f4927cf7f55c8c3ea5eb04f4b9e04c",
+                "url": "https://api.github.com/repos/coolsam726/flatpickr/zipball/845b494ee78d909396568ca2a73246c8e76ee6f9",
+                "reference": "845b494ee78d909396568ca2a73246c8e76ee6f9",
                 "shasum": ""
             },
             "require": {
-                "filament/filament": "^3",
+                "filament/filament": "^3|^4.0",
                 "php": "^8.2",
                 "spatie/laravel-package-tools": "^1.15.0"
             },
@@ -803,7 +803,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-04-19T17:24:55+00:00"
+            "time": "2025-08-21T09:11:23+00:00"
         },
         {
             "name": "danharrin/date-format-converter",
