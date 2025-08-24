@@ -18,7 +18,7 @@
         "coolsam/flatpickr": "^5.0",
         "dedoc/scramble": "^0.12.10",
         "dutchcodingcompany/filament-socialite": "^2.3",
-        "filament/filament": "^3.2",
+        "filament/filament": "^4.0",
         "filament/spatie-laravel-media-library-plugin": "^3.2",
         "filament/spatie-laravel-settings-plugin": "^3.2",
         "hasnayeen/themes": "*",
