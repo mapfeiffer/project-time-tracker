@@ -11028,16 +11028,16 @@
         },
         {
             "name": "torgodly/html2media",
-            "version": "1.1.4",
+            "version": "v1.1.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/torgodly/Html2Media.git",
-                "reference": "58c31b08fc46fa2dbf307e7bf88d833c4d933c05"
+                "reference": "a6c01c5e611b85d4d76fc039baa57f3b3abce976"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/torgodly/Html2Media/zipball/58c31b08fc46fa2dbf307e7bf88d833c4d933c05",
-                "reference": "58c31b08fc46fa2dbf307e7bf88d833c4d933c05",
+                "url": "https://api.github.com/repos/torgodly/Html2Media/zipball/a6c01c5e611b85d4d76fc039baa57f3b3abce976",
+                "reference": "a6c01c5e611b85d4d76fc039baa57f3b3abce976",
                 "shasum": ""
             },
             "require": {
@@ -11081,9 +11081,9 @@
             ],
             "support": {
                 "issues": "https://github.com/torgodly/Html2Media/issues",
-                "source": "https://github.com/torgodly/Html2Media/tree/1.1.4"
+                "source": "https://github.com/torgodly/Html2Media/tree/v1.1.5"
             },
-            "time": "2025-03-15T22:59:43+00:00"
+            "time": "2025-09-03T11:15:14+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
