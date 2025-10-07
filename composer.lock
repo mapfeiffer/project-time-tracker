@@ -7401,16 +7401,16 @@
         },
         {
             "name": "rupadana/filament-api-service",
-            "version": "3.4.9",
+            "version": "3.4.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/rupadana/filament-api-service.git",
-                "reference": "cc3918f1574f7c54957e0bff9754a9021dddcea5"
+                "reference": "1f02b0b66d075459ec5efe55ceb30e0149fa9ace"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/rupadana/filament-api-service/zipball/cc3918f1574f7c54957e0bff9754a9021dddcea5",
-                "reference": "cc3918f1574f7c54957e0bff9754a9021dddcea5",
+                "url": "https://api.github.com/repos/rupadana/filament-api-service/zipball/1f02b0b66d075459ec5efe55ceb30e0149fa9ace",
+                "reference": "1f02b0b66d075459ec5efe55ceb30e0149fa9ace",
                 "shasum": ""
             },
             "require": {
@@ -7481,7 +7481,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-07-17T01:23:45+00:00"
+            "time": "2025-10-07T11:42:04+00:00"
         },
         {
             "name": "ryangjchandler/blade-capture-directive",
